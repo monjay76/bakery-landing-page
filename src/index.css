@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-cream: #FAF6F0;
+  --color-cream-light: #FDFBF7;
+  --color-cream-dark: #F2EAE0;
+  --color-espresso: #2B1E1A;
+  --color-espresso-light: #3D2B25;
+  --color-espresso-muted: #6B5249;
+  --color-gold: #D4AF37;
+  --color-gold-hover: #BCA02E;
+  --color-gold-light: #F4E8C1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar to match the premium brand colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BCA02E;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "The Velvet Crumb Bakery",
+  "description": "Modern high-converting responsive landing page for a premium artisanal bakery designed to capture customer leads and drive local foot traffic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

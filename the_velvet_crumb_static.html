@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Velvet Crumb Bakery | Artisanal Baking, Perfected Daily</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            cream: {
+              DEFAULT: '#FAF6F0',
+              light: '#FDFBF7',
+              dark: '#F2EAE0',
+            },
+            espresso: {
+              DEFAULT: '#2B1E1A',
+              light: '#3D2B25',
+              muted: '#6B5249',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              hover: '#BCA02E',
+              light: '#F4E8C1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-cream text-espresso font-sans antialiased">
+
+  <!-- Oven Announcement Alert -->
+  <div class="bg-gold text-espresso text-xs font-semibold py-2 px-4 text-center tracking-wide flex justify-center items-center gap-2">
+    <span>✨ TASTE THE PERFECTION: Fresh sourdough batches coming out of the stone-oven in 15 minutes!</span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-espresso/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="text-2xl font-display font-semibold tracking-tight text-espresso group-hover:text-gold transition-colors">
+          The Velvet Crumb
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#why-us" class="text-sm font-medium text-espresso/80 hover:text-espresso transition-colors">Why Us</a>
+        <a href="#menu" class="text-sm font-medium text-espresso/80 hover:text-espresso transition-colors">Menu Highlights</a>
+        <a href="#testimonials" class="text-sm font-medium text-espresso/80 hover:text-espresso transition-colors">Reviews</a>
+        <a href="#contact" class="text-sm font-medium text-espresso/80 hover:text-espresso transition-colors">Directions & Hours</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#vip-club" class="bg-espresso text-cream hover:bg-espresso-light transition-all px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide shadow-sm hover:shadow">
+          Join VIP Club
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-espresso hover:text-gold focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-espresso/5 bg-cream px-4 py-6 space-y-4 shadow-inner">
+      <a href="#why-us" class="block text-base font-medium text-espresso/80 hover:text-espresso py-2 border-b border-espresso/5">Why Us</a>
+      <a href="#menu" class="block text-base font-medium text-espresso/80 hover:text-espresso py-2 border-b border-espresso/5">Menu Highlights</a>
+      <a href="#testimonials" class="block text-base font-medium text-espresso/80 hover:text-espresso py-2 border-b border-espresso/5">Reviews</a>
+      <a href="#contact" class="block text-base font-medium text-espresso/80 hover:text-espresso py-2 border-b border-espresso/5">Directions & Hours</a>
+      <a href="#vip-club" class="block w-full text-center bg-espresso text-cream py-3 rounded-full font-semibold">Join VIP Club</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-16 lg:py-24 border-b border-espresso/5 bg-gradient-to-b from-cream-light to-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Text & Lead Generation Form -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="space-y-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-light/60 text-espresso tracking-wide uppercase">
+              🌾 Local & Handcrafted Daily
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-espresso leading-tight">
+              Artisanal Baking,<br><span class="text-gold">Perfected Daily.</span>
+            </h1>
+            <p class="text-lg text-espresso-muted leading-relaxed max-w-xl">
+              Experience the deep flavors of our 24-hour slow-fermented organic sourdough bread, alongside a warm daily curation of delicate, butter-laminated pastries baked at dawn.
+            </p>
+          </div>
+
+          <!-- Interactive Lead-Gen Form -->
+          <div id="vip-club" class="bg-cream-dark/50 p-6 sm:p-8 rounded-3xl border border-espresso/5 shadow-sm max-w-xl space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-lg font-display font-semibold text-espresso">Become a Velvet Crumb VIP</h3>
+              <p class="text-xs text-espresso-muted">Unlock 10% off your first visit and receive notifications when hot batches exit the oven.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="lead-form" class="space-y-4" onsubmit="handleLeadSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="firstName" class="block text-xs font-semibold text-espresso/70 mb-1.5 uppercase tracking-wider">First Name</label>
+                  <input type="text" id="firstName" required placeholder="Gourmet Lover" class="w-full bg-cream-light border border-espresso/15 focus:border-gold focus:ring-1 focus:ring-gold rounded-xl px-4 py-3 text-sm text-espresso outline-none transition-all placeholder:text-espresso/40">
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-semibold text-espresso/70 mb-1.5 uppercase tracking-wider">Email Address</label>
+                  <input type="email" id="email" required placeholder="hello@gourmet.com" class="w-full bg-cream-light border border-espresso/15 focus:border-gold focus:ring-1 focus:ring-gold rounded-xl px-4 py-3 text-sm text-espresso outline-none transition-all placeholder:text-espresso/40">
+                </div>
+              </div>
+              <button type="submit" class="w-full bg-espresso text-cream hover:bg-espresso-light transition-colors py-3.5 rounded-xl text-sm font-semibold tracking-wide shadow-sm flex items-center justify-center gap-2">
+                Get 10% Off & VIP Invites
+              </button>
+            </form>
+
+            <!-- Success Container (Hidden by default) -->
+            <div id="lead-success" class="hidden text-center py-6 space-y-4 bg-cream-light/80 border border-gold/20 rounded-2xl p-6">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-gold/15 text-gold rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-display font-semibold text-espresso">Thank you for joining!</h4>
+                <p class="text-xs text-espresso-muted">We've sent your 10% coupon to your inbox. Present it at the register!</p>
+              </div>
+              <div class="bg-gold-light/40 border border-gold/30 rounded-xl py-3 px-4 inline-block">
+                <span class="text-xs text-espresso/65 font-medium block uppercase tracking-wider">Your VIP Code</span>
+                <span class="text-base font-mono font-bold text-espresso tracking-widest">VELVET10VIP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic (Uses Unsplash placeholder or your local layout) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-video lg:aspect-[4/5] shadow-xl border-4 border-cream-dark/50">
+            <img src="./assets/images/bakery_hero_1783650620651.jpg" alt="Warm artisanal bakery table with fresh bread and pastries" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop'">
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent"></div>
+            <!-- Interactive Oven Tag -->
+            <div class="absolute bottom-4 left-4 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-2xl flex items-center gap-3 border border-espresso/5 shadow-md">
+              <span class="flex h-3.5 w-3.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-gold"></span>
+              </span>
+              <div>
+                <p class="text-[10px] font-bold text-espresso/50 uppercase tracking-wider">Today's Batch</p>
+                <p class="text-xs font-bold text-espresso">Sourdough & Canele Hot</p>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative golden circle -->
+          <div class="absolute -top-6 -right-6 w-16 h-16 bg-gold/10 rounded-full blur-xl -z-10"></div>
+          <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="why-us" class="py-20 lg:py-28 border-b border-espresso/5 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-xl mx-auto space-y-4">
+        <span class="text-xs font-bold text-gold uppercase tracking-widest block">The Artisanal Philosophy</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold text-espresso">Why Velvet Crumb is Worth the Walk</h2>
+        <p class="text-sm text-espresso-muted leading-relaxed">
+          We believe in slow, patient processes, clean ingredients, and honoring the deep craft of traditional fermentation.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 hover:border-gold/30 hover:shadow-md transition-all duration-300 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-gold-light/40 flex items-center justify-center text-gold">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-display font-semibold text-espresso">24-Hour Slow Fermentation</h3>
+            <p class="text-sm text-espresso-muted leading-relaxed">
+              Our starters digest the complex gluten structures over a full day, unlocking rich complex flavors and making every slice incredibly easy on the gut.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 hover:border-gold/30 hover:shadow-md transition-all duration-300 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-gold-light/40 flex items-center justify-center text-gold">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-display font-semibold text-espresso">Stone-Milled Heritage Grain</h3>
+            <p class="text-sm text-espresso-muted leading-relaxed">
+              We source single-origin stone-milled flour from independent organic farmers, preserving the nutrient-dense bran and germ of heritage grains.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 hover:border-gold/30 hover:shadow-md transition-all duration-300 space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-gold-light/40 flex items-center justify-center text-gold">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-display font-semibold text-espresso">Baked Fresh at Dawn</h3>
+            <p class="text-sm text-espresso-muted leading-relaxed">
+              Our bakers arrive at 3:00 AM so our shelves are warm when you open your eyes. We produce limited quantities and never sell day-old baked goods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-20 lg:py-28 border-b border-espresso/5 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-xl mx-auto space-y-4">
+        <span class="text-xs font-bold text-gold uppercase tracking-widest block">Signature Favorites</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold text-espresso">The Velvet Crumb Selection</h2>
+        <p class="text-sm text-espresso-muted leading-relaxed">
+          Each item is hand-shaped, double-fermented, and baked in small batches. Tap any item to check allergens and ingredients.
+        </p>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Item 1 -->
+        <div class="bg-cream-light rounded-3xl overflow-hidden border border-espresso/5 shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300 group cursor-pointer" onclick="openMenuModal('sourdough')">
+          <div class="aspect-video overflow-hidden relative bg-cream-dark">
+            <img src="./assets/images/sourdough_bread_1783650631174.jpg" alt="Rosemary & Sea Salt Sourdough" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600&auto=format&fit=crop'">
+            <div class="absolute top-3 right-3 bg-espresso/85 text-gold font-mono text-xs font-bold py-1 px-3 rounded-full">
+              $9.50
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Loaf</span>
+            </div>
+            <h3 class="text-lg font-display font-semibold text-espresso group-hover:text-gold transition-colors">Rosemary & Sea Salt Sourdough</h3>
+            <p class="text-xs text-espresso-muted leading-relaxed line-clamp-2">
+              Infused with fresh organic rosemary sprigs and sprinkled with flaky hand-harvested Maldon sea salt. Perfect crunchy crust and airy crumb.
+            </p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-espresso gap-1">
+              <span>View Ingredients & Allergy Info</span>
+              <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-cream-light rounded-3xl overflow-hidden border border-espresso/5 shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300 group cursor-pointer" onclick="openMenuModal('croissant')">
+          <div class="aspect-video overflow-hidden relative bg-cream-dark">
+            <img src="./assets/images/pistachio_croissant_1783650642768.jpg" alt="Pistachio Cardamom Croissant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop'">
+            <div class="absolute top-3 right-3 bg-espresso/85 text-gold font-mono text-xs font-bold py-1 px-3 rounded-full">
+              $6.75
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Laminated</span>
+            </div>
+            <h3 class="text-lg font-display font-semibold text-espresso group-hover:text-gold transition-colors">Pistachio Cardamom Croissant</h3>
+            <p class="text-xs text-espresso-muted leading-relaxed line-clamp-2">
+              Flaky, multi-layered croissant with premium cultured butter, filled with a sweet cardamom-kissed pistachio paste and topped with crushed raw pistachios.
+            </p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-espresso gap-1">
+              <span>View Ingredients & Allergy Info</span>
+              <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bg-cream-light rounded-3xl overflow-hidden border border-espresso/5 shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300 group cursor-pointer" onclick="openMenuModal('canele')">
+          <div class="aspect-video overflow-hidden relative bg-cream-dark">
+            <img src="./assets/images/smoked_canele_1783650652713.jpg" alt="Smoked Vanilla Canele" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600&auto=format&fit=crop'">
+            <div class="absolute top-3 right-3 bg-espresso/85 text-gold font-mono text-xs font-bold py-1 px-3 rounded-full">
+              $4.50
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Confection</span>
+            </div>
+            <h3 class="text-lg font-display font-semibold text-espresso group-hover:text-gold transition-colors">Smoked Vanilla Canele</h3>
+            <p class="text-xs text-espresso-muted leading-relaxed line-clamp-2">
+              A classic Bordeaux recipe with an interactive twist: caramel dark crunchy crust, rich rum-and-egg custard core cold-smoked with applewood vanilla smoke.
+            </p>
+            <div class="pt-2 flex items-center text-xs font-semibold text-espresso gap-1">
+              <span>View Ingredients & Allergy Info</span>
+              <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Item Details Modal (Hidden by default) -->
+  <div id="item-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-espresso/60 backdrop-blur-sm" onclick="closeMenuModal()"></div>
+    <div class="relative bg-cream max-w-xl w-full rounded-3xl overflow-hidden border border-espresso/15 shadow-2xl z-10">
+      <button onclick="closeMenuModal()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-cream/90 flex items-center justify-center text-espresso hover:text-gold border border-espresso/10 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Content dynamically injected by JS -->
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Social Proof Section -->
+  <section id="testimonials" class="py-20 lg:py-28 border-b border-espresso/5 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="text-center max-w-xl mx-auto space-y-4">
+        <span class="text-xs font-bold text-gold uppercase tracking-widest block">Crumb Whispers</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold text-espresso">Praise From Local Foodies</h2>
+        <p class="text-sm text-espresso-muted">Read reviews from neighborhood regulars who follow the warm scent to our door every single morning.</p>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Review 1 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex text-gold">
+              <!-- 5 Stars -->
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+            <p class="text-sm text-espresso-muted italic leading-relaxed">
+              "The Rosemary Sourdough is an absolute masterpiece. The crust is crispy and dark, while the inside remains pillowy and incredibly fragrant. I walk three blocks out of my way every Saturday morning just for a hot loaf."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-espresso/10 pt-4">
+            <div class="w-10 h-10 rounded-full bg-gold-light/60 flex items-center justify-center font-display font-bold text-espresso text-sm">
+              ED
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-espresso">Eleanor Davies</h4>
+              <p class="text-[10px] text-espresso-muted">Neighborhood Regular</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex text-gold">
+              <!-- 5 Stars -->
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+            <p class="text-sm text-espresso-muted italic leading-relaxed">
+              "The Pistachio Cardamom Croissant is purely celestial. You can see the hundreds of paper-thin layers of butter lamination. Combined with the cardomom aroma and the rich pistachio filling, it's easily the best pastry in the state."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-espresso/10 pt-4">
+            <div class="w-10 h-10 rounded-full bg-gold-light/60 flex items-center justify-center font-display font-bold text-espresso text-sm">
+              MC
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-espresso">Marcus Chen</h4>
+              <p class="text-[10px] text-espresso-muted">Local Food Writer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-cream p-8 rounded-3xl border border-espresso/5 shadow-sm flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex text-gold">
+              <!-- 5 Stars -->
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+            <p class="text-sm text-espresso-muted italic leading-relaxed">
+              "They serve the smoked vanilla canele in a little glass cloche that holds the applewood vanilla smoke. It's theatrical, aromatic, and absolutely delicious. This shop combines deep tradition with incredible artistry."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-espresso/10 pt-4">
+            <div class="w-10 h-10 rounded-full bg-gold-light/60 flex items-center justify-center font-display font-bold text-espresso text-sm">
+              SK
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-espresso">Sophia Kincaid</h4>
+              <p class="text-[10px] text-espresso-muted">Neighborhood Resident</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foot Traffic / Interactive Directions & Contact -->
+  <section id="contact" class="py-20 lg:py-28 bg-cream border-b border-espresso/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Text details -->
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-bold text-gold uppercase tracking-widest block">Visit the Bakery</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-semibold text-espresso">Directions & Hours</h2>
+            <p class="text-sm text-espresso-muted leading-relaxed">
+              We are nestled in the vibrant heart of the Pastry District. Follow the scent of toasted yeast and roasted coffee beans.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Location -->
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Address</h4>
+              <p class="text-sm font-semibold text-espresso">123 Crumb Lane</p>
+              <p class="text-xs text-espresso-muted">Pastry District, SF 94103</p>
+            </div>
+            <!-- Contact -->
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Contact</h4>
+              <p class="text-sm font-semibold text-espresso">hello@velvetcrumb.com</p>
+              <p class="text-xs text-espresso-muted">(415) 555-0142</p>
+            </div>
+            <!-- Hours -->
+            <div class="space-y-2 sm:col-span-2">
+              <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Opening Hours</h4>
+              <div class="text-sm space-y-1 font-semibold text-espresso">
+                <div class="flex justify-between max-w-xs"><span class="text-espresso/70">Wednesday – Friday:</span> <span>6:30 AM – 2:00 PM</span></div>
+                <div class="flex justify-between max-w-xs"><span class="text-espresso/70">Saturday – Sunday:</span> <span>7:00 AM – 3:00 PM</span></div>
+                <div class="flex justify-between max-w-xs text-gold"><span class="font-bold">Monday – Tuesday:</span> <span class="font-bold">Closed (Starters Feeding)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Directions Widget -->
+        <div class="bg-cream-light p-6 sm:p-8 rounded-3xl border border-espresso/10 shadow-md space-y-6">
+          <div class="space-y-2">
+            <h3 class="text-lg font-display font-semibold text-espresso">Walking Directions Calculator</h3>
+            <p class="text-xs text-espresso-muted">Input your neighborhood location to find the quickest route to fresh bread.</p>
+          </div>
+
+          <!-- Directions Input -->
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-espresso/70 mb-1.5 uppercase tracking-wider">Starting Location</label>
+              <select id="start-loc" class="w-full bg-cream border border-espresso/15 focus:border-gold rounded-xl px-4 py-3 text-sm text-espresso outline-none transition-all">
+                <option value="ferry">Ferry Building (Market St)</option>
+                <option value="mission">Mission Dolores Park</option>
+                <option value="union">Union Square Park</option>
+                <option value="valencia">Valencia Corridor (16th St)</option>
+              </select>
+            </div>
+
+            <button onclick="calculateDirections()" class="w-full bg-espresso text-cream hover:bg-espresso-light transition-colors py-3 rounded-xl text-sm font-semibold tracking-wide shadow-sm">
+              Calculate Foot Route
+            </button>
+          </div>
+
+          <!-- Directions Output (Hidden by default) -->
+          <div id="directions-output" class="hidden border-t border-espresso/10 pt-4 space-y-3">
+            <div class="flex justify-between items-center text-xs text-espresso-muted bg-cream p-3 rounded-xl border border-espresso/5">
+              <span>🚶 Distance: <strong class="text-espresso" id="dist-val">0.8 miles</strong></span>
+              <span>⏱️ Time: <strong class="text-espresso" id="time-val">12 minutes</strong></span>
+            </div>
+            <div class="space-y-2">
+              <h5 class="text-xs font-bold text-gold uppercase tracking-wider">Your Walking Steps</h5>
+              <ol class="list-decimal list-inside text-xs text-espresso-muted space-y-1.5 pl-1" id="directions-steps">
+                <!-- Injected steps -->
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-espresso text-cream/80 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-2">
+          <h3 class="text-2xl font-display font-semibold text-cream">The Velvet Crumb</h3>
+          <p class="text-sm text-cream/60 leading-relaxed max-w-sm">
+            Premium sourdough breads, laminated butter pastries, and classic French sweets baked at dawn using certified stone-milled heritage flours.
+          </p>
+          <p class="text-xs text-cream/40">
+            © 2026 The Velvet Crumb Bakery. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold text-gold uppercase tracking-widest">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#why-us" class="hover:text-gold transition-colors">Why Us</a></li>
+            <li><a href="#menu" class="hover:text-gold transition-colors">Menu Highlights</a></li>
+            <li><a href="#testimonials" class="hover:text-gold transition-colors">Reviews</a></li>
+            <li><a href="#contact" class="hover:text-gold transition-colors">Directions & Hours</a></li>
+          </ul>
+        </div>
+
+        <!-- Social placeholders & corporate site -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold text-gold uppercase tracking-widest">Connect</h4>
+          <div class="flex items-center gap-4 text-cream/70">
+            <a href="#" class="hover:text-gold transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="hover:text-gold transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a href="https://velvetcrumb-main-example.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors flex items-center gap-1 text-xs">
+              <span>Main Website</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Basic JavaScript Logic -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconPath = document.getElementById('menu-icon-path');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      }
+    });
+
+    // Close mobile menu on clicking any link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Lead generation form validation & submission
+    function handleLeadSubmit(event) {
+      event.preventDefault();
+      const firstName = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      
+      if (firstName && email) {
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+
+        // Hide form, show success message
+        document.getElementById('lead-form').classList.add('hidden');
+        document.getElementById('lead-success').classList.remove('hidden');
+      }
+    }
+
+    // Menu highlights details dynamic data
+    const menuData = {
+      sourdough: {
+        title: 'Rosemary & Sea Salt Sourdough',
+        price: '$9.50',
+        category: 'Artisanal Loaf',
+        image: './assets/images/sourdough_bread_1783650631174.jpg',
+        fallbackImage: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600&auto=format&fit=crop',
+        description: 'Our signature loaf, double-fermented for a deeper flavor profile and incredibly airy cell structure. Infused with freshly picked organic garden rosemary and finished with thick flakes of pristine hand-harvested sea salt.',
+        ingredients: ['Organic Stone-Milled Wheat Flour', 'Filtered Water', 'House Wild Sourdough Starter', 'Fresh Rosemary', 'Maldon Sea Salt'],
+        allergens: ['Contains Wheat (Gluten)'],
+        taste: ['Herbaceous', 'Slightly Tangy', 'Salty Crust', 'Moist Crumb']
+      },
+      croissant: {
+        title: 'Pistachio Cardamom Croissant',
+        price: '$6.75',
+        category: 'Laminated Pastry',
+        image: './assets/images/pistachio_croissant_1783650642768.jpg',
+        fallbackImage: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop',
+        description: 'Made with French AOP cultured butter, featuring 81 flaky, paper-thin laminated layers. Generously filled with a rich, house-made roasted Sicilian pistachio paste balanced with freshly ground green cardamom pods, glazed and topped with crushed raw pistachios.',
+        ingredients: ['Organic Wheat Flour', 'French Cultured Butter', 'House Pistachio Paste', 'Green Cardamom', 'Organic Cane Sugar', 'Yeast'],
+        allergens: ['Contains Wheat (Gluten)', 'Dairy', 'Tree Nuts (Pistachios)'],
+        taste: ['Deeply Buttery', 'Nutty Cream', 'Cardamom Citrus Note', 'Shatteringly Flaky']
+      },
+      canele: {
+        title: 'Smoked Vanilla Canele',
+        price: '$4.50',
+        category: 'Bordeaux Confectionery',
+        image: './assets/images/smoked_canele_1783650652713.jpg',
+        fallbackImage: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=600&auto=format&fit=crop',
+        description: 'An interactive multi-sensory treat. Baked in traditional copper molds lined with local beeswax and organic butter, achieving a glassy, deeply caramelized bitter-sweet mahogany crust. Cold-smoked under a vanilla-applewood dome right before serving to trap the smoke aromatics.',
+        ingredients: ['Whole Organic Milk', 'Organic Cane Sugar', 'Egg Yolks', 'Wheat Flour', 'Dark Rum', 'Madagascar Vanilla Bean', 'Local Beeswax'],
+        allergens: ['Contains Wheat (Gluten)', 'Dairy', 'Eggs', 'Alcohol Traces'],
+        taste: ['Caramelized Crust', 'Rum & Egg Custard Core', 'Intense Vanilla', 'Applewood Smoke Accent']
+      }
+    };
+
+    function openMenuModal(itemKey) {
+      const data = menuData[itemKey];
+      if (!data) return;
+
+      const contentDiv = document.getElementById('modal-content');
+      contentDiv.innerHTML = `
+        <div class="aspect-video relative overflow-hidden bg-cream-dark">
+          <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover" onerror="this.src='${data.fallbackImage}'">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-6 right-6 flex justify-between items-end">
+            <div>
+              <span class="text-[10px] font-bold text-gold uppercase tracking-widest block mb-0.5">${data.category}</span>
+              <h3 class="text-xl font-display font-semibold text-cream">${data.title}</h3>
+            </div>
+            <span class="bg-gold text-espresso font-mono text-xs font-bold px-3 py-1.5 rounded-full">${data.price}</span>
+          </div>
+        </div>
+        <div class="p-6 sm:p-8 space-y-6">
+          <p class="text-sm text-espresso-muted leading-relaxed">${data.description}</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Ingredients</h4>
+              <ul class="text-xs text-espresso-muted space-y-1">
+                ${data.ingredients.map(ing => `<li>• ${ing}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Allergens</h4>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  ${data.allergens.map(all => `<span class="text-[10px] bg-red-100 text-red-800 font-medium px-2 py-0.5 rounded-md">${all}</span>`).join('')}
+                </div>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-xs font-bold text-gold uppercase tracking-wider">Flavor Profile</h4>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  ${data.taste.map(t => `<span class="text-[10px] bg-gold-light/40 text-espresso font-medium px-2 py-0.5 rounded-md">${t}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('item-modal').classList.remove('hidden');
+    }
+
+    function closeMenuModal() {
+      document.getElementById('item-modal').classList.add('hidden');
+    }
+
+    // Walking Directions calculator database
+    const directionsData = {
+      ferry: {
+        dist: '1.2 miles',
+        time: '18 minutes',
+        steps: [
+          'Head south-west on Market St toward Ferry Plaza (0.3 miles)',
+          'Turn left onto New Montgomery St (0.2 miles)',
+          'Slight right onto Hawthorne St (0.1 miles)',
+          'Turn right onto Folsom St (0.4 miles)',
+          'Turn left onto Crumb Lane; the bakery is on your right (0.2 miles)'
+        ]
+      },
+      mission: {
+        dist: '0.9 miles',
+        time: '14 minutes',
+        steps: [
+          'Exit Mission Dolores Park heading north-east on 18th St (0.2 miles)',
+          'Turn left onto Valencia St (0.3 miles)',
+          'Turn right onto 16th St (0.2 miles)',
+          'Turn left onto Crumb Lane; walk past the yeast containers (0.2 miles)'
+        ]
+      },
+      union: {
+        dist: '1.1 miles',
+        time: '16 minutes',
+        steps: [
+          'Head south-east on Powell St toward Geary St (0.1 miles)',
+          'Turn right onto Market St (0.3 miles)',
+          'Slight left onto 6th St (0.4 miles)',
+          'Turn right onto Folsom St, then left onto Crumb Lane (0.3 miles)'
+        ]
+      },
+      valencia: {
+        dist: '0.7 miles',
+        time: '11 minutes',
+        steps: [
+          'Walk east along 16th St toward Mission St (0.2 miles)',
+          'Slight left onto Folsom St (0.3 miles)',
+          'Turn right onto Crumb Lane; look for the golden-lit sourdough sign (0.2 miles)'
+        ]
+      }
+    };
+
+    function calculateDirections() {
+      const selectVal = document.getElementById('start-loc').value;
+      const data = directionsData[selectVal];
+      if (!data) return;
+
+      document.getElementById('dist-val').innerText = data.dist;
+      document.getElementById('time-val').innerText = data.time;
+
+      const stepsOl = document.getElementById('directions-steps');
+      stepsOl.innerHTML = data.steps.map(step => `<li class="py-0.5">${step}</li>`).join('');
+
+      document.getElementById('directions-output').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
